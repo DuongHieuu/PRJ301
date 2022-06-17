@@ -6,22 +6,19 @@
 <%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+
 
     <head>
         <title>Gift Shop</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/stylepage.css" />
-        <link rel="stylesheet" href="css/dropdownstyle.css" />
 
     </head>
 
-    <body>
-        <div class="container-fluid">
-            <div class="row">
+    
+        
+            
                 <div class="col-sm-12 col-lg-3 logo_wrap">
                     <a id="logo" href="homePageController">
 
@@ -30,13 +27,13 @@
                         <span>Gift & Accessories</span>
                     </a>
                 </div>
-                <div class="col-sm-6 col-lg-5">
+                
                     <div class="header_row-12"></div>
-                    <div class="header_row-2-search">
+                    
                         <!-- HEADER SEARCH -->
-                        <div class="header_search">
+                        
 
-                            <form action="searchProductController" method="post" >
+                            <form>
                                 <div class="col-xs-9  col-lg-8 ">
 
                                     <input id="search-field" name="q" type="search" placeholder="Search store..."
@@ -49,9 +46,9 @@
 
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
+                        
+                    
+                
                 <div class="col-sm-6 col-lg-4 header_row-both">
 
                     <div class="header_user">
@@ -98,7 +95,7 @@
                     </div>
                 </div>
 
-            </div>
+            
             <div class="row-Menu">
                 <div class="clearfix" id="navigation">
                     <ul class="sf-menu">
@@ -134,7 +131,7 @@
                          src="images/ManUnitedbanner.jpg" />
                 </div>
             </div>
-        </div>
+        
 
 
         <div class="container">
@@ -342,7 +339,7 @@
                     <h3>Contacts</h3>
                     <ul>
 
-                        <li class="firstItem">0210 Ram Road,  Royal Crescent Tel 136-567-9842
+                        <li class="firstItem">Đại Học FPT, Tel 123-456-789
                         </li>
 
                         <li class="lastItem">Email: <a href="https://mail.google.com/">shopGift@gmail.com</a></li>
@@ -354,7 +351,7 @@
         </div>
 
 
-    </body>
+    
 
-</html>
+
 

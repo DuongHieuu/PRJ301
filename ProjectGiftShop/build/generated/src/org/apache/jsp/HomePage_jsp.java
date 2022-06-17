@@ -45,22 +45,19 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
-      out.write("<html lang=\"en\">\n");
+      out.write("\n");
       out.write("\n");
       out.write("    <head>\n");
       out.write("        <title>Gift Shop</title>\n");
       out.write("        <meta charset=\"utf-8\" />\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n");
       out.write("        <!-- Bootstrap -->\n");
-      out.write("        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\" />\n");
-      out.write("        <link rel=\"stylesheet\" href=\"css/stylepage.css\" />\n");
-      out.write("        <link rel=\"stylesheet\" href=\"css/dropdownstyle.css\" />\n");
       out.write("\n");
       out.write("    </head>\n");
       out.write("\n");
-      out.write("    <body>\n");
-      out.write("        <div class=\"container-fluid\">\n");
-      out.write("            <div class=\"row\">\n");
+      out.write("    \n");
+      out.write("        \n");
+      out.write("            \n");
       out.write("                <div class=\"col-sm-12 col-lg-3 logo_wrap\">\n");
       out.write("                    <a id=\"logo\" href=\"homePageController\">\n");
       out.write("\n");
@@ -69,13 +66,13 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <span>Gift & Accessories</span>\n");
       out.write("                    </a>\n");
       out.write("                </div>\n");
-      out.write("                <div class=\"col-sm-6 col-lg-5\">\n");
+      out.write("                \n");
       out.write("                    <div class=\"header_row-12\"></div>\n");
-      out.write("                    <div class=\"header_row-2-search\">\n");
+      out.write("                    \n");
       out.write("                        <!-- HEADER SEARCH -->\n");
-      out.write("                        <div class=\"header_search\">\n");
+      out.write("                        \n");
       out.write("\n");
-      out.write("                            <form action=\"searchProductController\" method=\"post\" >\n");
+      out.write("                            <form>\n");
       out.write("                                <div class=\"col-xs-9  col-lg-8 \">\n");
       out.write("\n");
       out.write("                                    <input id=\"search-field\" name=\"q\" type=\"search\" placeholder=\"Search store...\"\n");
@@ -88,9 +85,9 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("                                </div>\n");
       out.write("                            </form>\n");
-      out.write("                        </div>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
+      out.write("                        \n");
+      out.write("                    \n");
+      out.write("                \n");
       out.write("                <div class=\"col-sm-6 col-lg-4 header_row-both\">\n");
       out.write("\n");
       out.write("                    <div class=\"header_user\">\n");
@@ -147,7 +144,7 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("\n");
-      out.write("            </div>\n");
+      out.write("            \n");
       out.write("            <div class=\"row-Menu\">\n");
       out.write("                <div class=\"clearfix\" id=\"navigation\">\n");
       out.write("                    <ul class=\"sf-menu\">\n");
@@ -183,7 +180,7 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                         src=\"images/ManUnitedbanner.jpg\" />\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
-      out.write("        </div>\n");
+      out.write("        \n");
       out.write("\n");
       out.write("\n");
       out.write("        <div class=\"container\">\n");
@@ -440,7 +437,7 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <h3>Contacts</h3>\n");
       out.write("                    <ul>\n");
       out.write("\n");
-      out.write("                        <li class=\"firstItem\">0210 Ram Road,  Royal Crescent Tel 136-567-9842\n");
+      out.write("                        <li class=\"firstItem\">Đại Học FPT, Tel 123-456-789\n");
       out.write("                        </li>\n");
       out.write("\n");
       out.write("                        <li class=\"lastItem\">Email: <a href=\"https://mail.google.com/\">shopGift@gmail.com</a></li>\n");
@@ -452,9 +449,9 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\n");
       out.write("\n");
       out.write("\n");
-      out.write("    </body>\n");
+      out.write("    \n");
       out.write("\n");
-      out.write("</html>\n");
+      out.write("\n");
       out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
