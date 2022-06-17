@@ -17,7 +17,7 @@ INSERT INTO Account(username, [password], isAdmin) VALUES ('abc', '1234', 0);
 INSERT INTO Account(username, [password], isAdmin) VALUES ('rooney123', 'av123', 1);
 INSERT INTO Account(username, [password], isAdmin) VALUES ('ronaldol07', 'messi10', 1);
 INSERT INTO Account(username, [password], isAdmin) VALUES ('kagawa23', 'japan123', 0);
-INSERT INTO Account(username, [password], isAdmin) VALUES ('xyz', 'abc123', 0);
+INSERT INTO Account(username, [password], isAdmin) VALUES ('dghieu11', 'hieu123', 1);
 INSERT INTO Account(username, [password], isAdmin) VALUES ('flawless13', 'catcat123', 0);
 INSERT INTO Account(username, [password], isAdmin) VALUES ('buffor76', 'aafg123', 0);
 
@@ -314,8 +314,8 @@ Values (4,12,2)
    contactdate DATE NOT NULL,
    PRIMARY KEY (contactid)
    );
-INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Tran','Duyen','tranduyen124@gmail.com','0987252624','It cold today','2022-01-19');
-INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Vu','Minh','vuminh158@gmail.com','0916356254','I can not receive product','2022-02-03');   
-INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Bui','Trang','buitrang652@gmail.com','0983654264','I can login in shop page','2022-03-11');   
-INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Luu','Thai','luuthai10@gmail.com','0961264765','Your shop are perfect','2022-02-22');   
-INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Kim','Tuyen','kimtuyen145@gmail.com','091535635','I have a deal for you','2022-01-11');   
+INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Duong','Hieu','dthieu2k1@gmail.com','0886736795','I can not pay with QR Code','2022-05-19');
+INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Vu','Minh','vuminh158@gmail.com','0916356254','I can not receive product','2022-06-03');   
+INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Bui','Trang','buitrang652@gmail.com','0983654264','I can login in shop page','2022-04-11');   
+INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Luu','Thai','luuthai10@gmail.com','0961264765','Your shop are perfect','2022-04-22');   
+INSERT INTO Contact(firstname,lastname,[email],[phone],[message],contactdate) VALUES ('Kim','Tuyen','kimtuyen145@gmail.com','091535635','I have a deal for you','2022-05-11');   
