@@ -20,7 +20,7 @@
                     <br><input type="text" name="password" placeholder="password">
                     <br><input type="text" name="password" placeholder="repassword">
                     <br><button>login</button>
-                    <p class="message">Already registered? <a href="/css/login.html">Sign In</a></p>
+                    <p class="message">Already registered? <a href="#">Sign In</a></p>
                 </form>
                 
             </div>

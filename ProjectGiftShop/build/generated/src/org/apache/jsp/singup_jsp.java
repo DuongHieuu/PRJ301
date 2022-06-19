@@ -59,7 +59,7 @@ public final class singup_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <br><input type=\"text\" name=\"password\" placeholder=\"password\">\n");
       out.write("                    <br><input type=\"text\" name=\"password\" placeholder=\"repassword\">\n");
       out.write("                    <br><button>login</button>\n");
-      out.write("                    <p class=\"message\">Already registered? <a href=\"/css/login.html\">Sign In</a></p>\n");
+      out.write("                    <p class=\"message\">Already registered? <a href=\"#\">Sign In</a></p>\n");
       out.write("                </form>\n");
       out.write("                \n");
       out.write("            </div>\n");
