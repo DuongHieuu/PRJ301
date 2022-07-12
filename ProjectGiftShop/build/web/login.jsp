@@ -19,7 +19,7 @@
                     <input type="text" placeholder="username" name="username"/>
                     <br><input type="text" placeholder="password" name="password"/>
                     <br><button>login</button>
-                    <p class="message">If you want registered, please click: <a href="#">Create an account</a></p>
+                    <p class="message">If you want registered, please click: <a href="signup.jsp">Create an account</a></p>
                 </form>
             </div>
         </div>
