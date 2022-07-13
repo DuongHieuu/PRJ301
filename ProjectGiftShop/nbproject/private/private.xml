@@ -7,11 +7,14 @@
             <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/css/bootstrap.min.css</file>
             <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/css/stylepage.css</file>
+            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/homePageController.java</file>
             <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/DAL/BaseDAO.java</file>
             <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/HomePage.jsp</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/singup.jsp</file>
+            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/DAL/ProductDAO.java</file>
+            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/model/Product.java</file>
             <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/DAL/AccountDAO.java</file>
             <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/model/Account.java</file>
+            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/signupController.java</file>
         </group>
     </open-files>
 </project-private>
