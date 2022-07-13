@@ -5,7 +5,6 @@
 
 package Controller;
 
-
 import DAL.CategoryDAO;
 import DAL.ProductDAO;
 import java.io.IOException;
@@ -22,7 +21,7 @@ import model.Product;
  *
  * @author dthie
  */
-public class shopController extends HttpServlet {
+public class categoryController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -39,10 +38,10 @@ public class shopController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet shopController</title>");  
+            out.println("<title>Servlet categoryController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet shopController at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet categoryController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -59,17 +58,22 @@ public class shopController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        ProductDAO pd = new ProductDAO();
-        ArrayList<Product> products = new ArrayList<>();
-        products = pd.getProducts();
-        
+        String cidString = request.getParameter("cid");
+        int cid = Integer.parseInt(cidString);
         ArrayList<Category> listCategory = new ArrayList<>();
         CategoryDAO cd = new CategoryDAO();
         listCategory = cd.getCategory();
         
-        request.setAttribute("listP", products);
+        ArrayList<Product> products = new ArrayList<>();
+        ProductDAO pd = new ProductDAO();
+        
+        products = pd.getProductByCategoryId(cid);
         request.setAttribute("listC", listCategory);
+        
+        request.setAttribute("cid", cid);
+        request.setAttribute("listP", products);
         request.getRequestDispatcher("shop.jsp").forward(request, response);
+                
     } 
 
     /** 

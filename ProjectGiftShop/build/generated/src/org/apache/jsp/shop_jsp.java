@@ -125,31 +125,25 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"clearfix\" id=\"navigation\">\n");
       out.write("                    <ul class=\"sf-menu\">\n");
       out.write("\n");
-      out.write("                        <li class=\"first active firstItem\">\n");
-      out.write("                            <a href=\"/\">Home</a>\n");
+      out.write("                        <li class=\"first ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cid==null?\"active\":\"\"}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" firstItem\">\n");
+      out.write("                            <a  href=\"/\">Shop</a>\n");
       out.write("                        </li>\n");
       out.write("\n");
       out.write("                        <li class=\"has-dropdown\">\n");
-      out.write("                            <a class=\"sf-with-ul\" href=\"#\">Catalog</a>\n");
+      out.write("                            <a title=\"\" class=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cid!=null?\"active\":\"\"}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" href=\"#\">Catalog</a>\n");
       out.write("\n");
       out.write("\n");
       out.write("                            <ul class=\"sub-menu\" style=\"width: 230px; \">\n");
       out.write("\n");
-      out.write("                                <li style=\"width: 100%; float: none; \"><a\n");
-      out.write("                                        style=\"width: auto; float: none;\" href=\"#\">Fashion</a>\n");
-      out.write("                                </li>\n");
-      out.write("                                <li class=\"first firstItem\"\n");
-      out.write("                                    style=\"width: 100%; float: none; \"><a class=\"first\"\n");
-      out.write("                                                                      style=\"width: auto; float: none;\" href=\"#\">Equipment</a>\n");
-      out.write("                                </li>\n");
+      out.write("                                ");
+      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+        return;
       out.write("\n");
-      out.write("                                <li style=\"width: 100%; float: none; \"><a\n");
-      out.write("                                        style=\"width: auto; float: none;\" href=\"#\">Accessories</a>\n");
-      out.write("                                </li>\n");
       out.write("\n");
-      out.write("                                <li style=\"width: 100%; float: none;\"><a\n");
-      out.write("                                        style=\"width: auto; float: none;\"\n");
-      out.write("                                        href=\"#\">Other</a></li>\n");
       out.write("                            </ul>\n");
       out.write("\n");
       out.write("                        </li>\n");
@@ -194,7 +188,7 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            <div class=\"row\">\n");
       out.write("                ");
-      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+      if (_jspx_meth_c_forEach_1(_jspx_page_context))
         return;
       out.write("\n");
       out.write("            </div>\n");
@@ -318,12 +312,58 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${listP}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_0.setVar("p");
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${listC}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setVar("c");
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                                    <li style=\"width: 100%; float: none;\"><a class=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${cid==c.cid?\"active\":\"\"}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\"\n");
+          out.write("                                                                             style=\"width: auto; float: none;\" href=\"categoryController?cid=");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${c.cid}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write('"');
+          out.write('>');
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${c.categoryName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</a>\n");
+          out.write("                                    </li>\n");
+          out.write("                                ");
+          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_0.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_1.setParent(null);
+    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${listP}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_1.setVar("p");
+    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
+      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
           out.write("                    <div class=\"col-md-3\">\n");
@@ -349,21 +389,21 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                        </div>\n");
           out.write("                    </div>\n");
           out.write("                ");
-          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
+          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
         } while (true);
       }
-      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
         return true;
       }
     } catch (Throwable _jspx_exception) {
-      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
+      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
         out = _jspx_page_context.popBody();
-      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
+      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
     } finally {
-      _jspx_th_c_forEach_0.doFinally();
-      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+      _jspx_th_c_forEach_1.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
     }
     return false;
   }
