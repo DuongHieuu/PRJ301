@@ -11,7 +11,7 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items_end_begin;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -20,11 +20,11 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
-    _jspx_tagPool_c_forEach_var_items_end_begin = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
-    _jspx_tagPool_c_forEach_var_items_end_begin.release();
+    _jspx_tagPool_c_forEach_var_items.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -58,10 +58,12 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("                <title>Gift Shop</title>\n");
-      out.write("                <!-- Bootstrap -->\n");
+      out.write("        <title>Gift Shop</title>\n");
+      out.write("        <!-- Bootstrap -->\n");
       out.write("        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\" />\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/stylepage.css\" />\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/dropdownstyle.css\" />\n");
+      out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"container-fluid\">\n");
@@ -120,14 +122,50 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            </div>\n");
       out.write("            <div class=\"row-Menu\">\n");
-      out.write("                <div class=\"sf-Menu\">\n");
-      out.write("                    <a  title=\"\" href=\"home.jsp\">Home</a>\n");
+      out.write("                <div class=\"clearfix\" id=\"navigation\">\n");
+      out.write("                    <ul class=\"sf-menu\">\n");
       out.write("\n");
-      out.write("                    <a class=\"active\" href=\"#\">Shop</a>\n");
+      out.write("                        <li class=\"first active firstItem\">\n");
+      out.write("                            <a href=\"/\">Home</a>\n");
+      out.write("                        </li>\n");
       out.write("\n");
-      out.write("                    <a title=\"\" href=\"/\">Blog</a>\n");
+      out.write("                        <li class=\"has-dropdown\">\n");
+      out.write("                            <a class=\"sf-with-ul\" href=\"#\">Catalog</a>\n");
       out.write("\n");
-      out.write("                    <a title=\"\" href=\"/\">Contact</a>\n");
+      out.write("\n");
+      out.write("                            <ul class=\"sub-menu\" style=\"width: 230px; \">\n");
+      out.write("\n");
+      out.write("                                <li style=\"width: 100%; float: none; \"><a\n");
+      out.write("                                        style=\"width: auto; float: none;\" href=\"#\">Fashion</a>\n");
+      out.write("                                </li>\n");
+      out.write("                                <li class=\"first firstItem\"\n");
+      out.write("                                    style=\"width: 100%; float: none; \"><a class=\"first\"\n");
+      out.write("                                                                      style=\"width: auto; float: none;\" href=\"#\">Equipment</a>\n");
+      out.write("                                </li>\n");
+      out.write("\n");
+      out.write("                                <li style=\"width: 100%; float: none; \"><a\n");
+      out.write("                                        style=\"width: auto; float: none;\" href=\"#\">Accessories</a>\n");
+      out.write("                                </li>\n");
+      out.write("\n");
+      out.write("                                <li style=\"width: 100%; float: none;\"><a\n");
+      out.write("                                        style=\"width: auto; float: none;\"\n");
+      out.write("                                        href=\"#\">Other</a></li>\n");
+      out.write("                            </ul>\n");
+      out.write("\n");
+      out.write("                        </li>\n");
+      out.write("\n");
+      out.write("                        <li>\n");
+      out.write("                            <a  href=\"#\">About Us</a>\n");
+      out.write("\n");
+      out.write("                        </li>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                        <li class=\"last lastItem\">\n");
+      out.write("                            <a  href=\"#\">Contact us</a>\n");
+      out.write("\n");
+      out.write("                        </li>\n");
+      out.write("\n");
+      out.write("                    </ul>\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -277,12 +315,10 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
-    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items_end_begin.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
     _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${listP}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    _jspx_th_c_forEach_0.setBegin(0);
-    _jspx_th_c_forEach_0.setEnd(7);
     _jspx_th_c_forEach_0.setVar("p");
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
@@ -327,7 +363,7 @@ public final class shop_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_th_c_forEach_0.doCatch(_jspx_exception);
     } finally {
       _jspx_th_c_forEach_0.doFinally();
-      _jspx_tagPool_c_forEach_var_items_end_begin.reuse(_jspx_th_c_forEach_0);
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
     }
     return false;
   }

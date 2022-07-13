@@ -12,6 +12,8 @@
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/stylepage.css" />
+        <link rel="stylesheet" href="css/dropdownstyle.css" />
+        
     </head>
 
     <body>
@@ -72,14 +74,29 @@
 
             </div>           
             <div class="row-Menu">
-                <div class="sf-Menu">
-                    <a class="active" title="" href="home.jsp">Home</a>
-
-                    <a href="#">Shop</a>                    
-
-                    <a title="" href="/">Blog</a>
-
-                    <a title="" href="/">Contact</a>
+                <div class="clearfix" id="navigation">
+                    <ul class="sf-Menu">
+                        
+                        <li class="active firstItem">
+                            <a href="#">Home</a>
+                        </li>
+                        
+                        <li class="has-dropdown">
+                            <a title="" class="sf-with-ul" href="#">Shop</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        
+                        <li class="last lastItem">
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                    
+                    
+                    
                 </div>
 
             </div>
