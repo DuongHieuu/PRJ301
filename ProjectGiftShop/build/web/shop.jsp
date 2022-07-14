@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-lg-3 logo_wrap">
-                    <a id="logo" href="home.jsp">
+                    <a id="logo" href="homePageController">
 
                         <b>GiftShop</b>
 
@@ -80,7 +80,7 @@
                             <a title="" class="${cid!=null?"active":""}" href="#">Catalog</a>
 
 
-                            <ul class="sub-menu" style="width: 230px; ">
+                            <ul class="sub-menu" style="width: 235px; ">
 
                                 <c:forEach items="${listC}" var="c">
                                     <li style="width: 100%; float: none;"><a class="${cid==c.cid?"active":""}"

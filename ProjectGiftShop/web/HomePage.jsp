@@ -1,10 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-
-
-
 <html lang="en">
-
     <head>
         <title>Gift Shop</title>
         <meta charset="utf-8" />
@@ -13,14 +9,12 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/stylepage.css" />
         <link rel="stylesheet" href="css/dropdownstyle.css" />
-        
     </head>
-
     <body>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-lg-3 logo_wrap">
-                    <a id="logo" href="home.jsp">
+                    <a id="logo" href="homePageController">
 
                         <b>GiftShop</b>
 
@@ -32,10 +26,8 @@
                     <div class="header_row-2-search">
                         <!-- HEADER SEARCH -->
                         <div class="header_search">
-
                             <form action="/search" method="get" >
                                 <div class="col-xs-9  col-lg-8 ">
-
                                     <input id="search-field" name="q" type="search" placeholder="Search store..."
                                            />
                                 </div>
@@ -43,64 +35,46 @@
                                     <button type="submit" class="btn btn-default">                                       
                                         Search
                                     </button>
-
-
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 header_row-both">
-
                     <div class="header_user">
-
                         <!-- USER MENU -->
-
                         <a href="login.jsp" id="customer_login_link">Log in</a>
-
-
                         <a href="signup.jsp" id="customer_register_link">Create an account</a>
-
                         <a href="#" id="customer_manager_link">Manager</a>
-
                         <!-- HEADER CART -->
-
-
                         <a class="header_cart" href="#" id="customer_cart_link"><b>Cart</b><span
                                 class="cart-items"></span></a>
-
                     </div>
                 </div>
-
-            </div>           
+            </div>
             <div class="row-Menu">
                 <div class="clearfix" id="navigation">
-                    <ul class="sf-Menu">
-                        
+                    <ul class="sf-menu">
+
+
                         <li class="active firstItem">
-                            <a href="#">Home</a>
+                            <a href="homePageController">Home</a>
                         </li>
                         
                         <li class="has-dropdown">
-                            <a title="" class="sf-with-ul" href="shopController">Shop</a>
-                        </li>
-                        
+                            <a href="shopController">Shop</a>
+                         </li>
+
+
                         <li>
-                            <a href="#">About Us</a>
+                            <a  href="#">About Us</a>
                         </li>
-                        
                         <li class="last lastItem">
-                            <a href="#">Contact Us</a>
+                            <a  href="#">Contact us</a>
                         </li>
                     </ul>
                 </div>
-                    
-                    
-                    
-                </div>
-
             </div>
-
             <div class="rowBanner">
                 <div class="col-md-12 banner123">
                     <img style="height: 520px; width: 100%;" class="img-responsive"
@@ -108,9 +82,6 @@
                 </div>
             </div>
         </div>
-
-
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -118,7 +89,6 @@
                     <img style="width:100%;" class="img-responsive" src="images/evenBanner.png" />
                 </div>
             </div>
-            
             <div class="row">
                 <div class="col-md-3">
                     <div class="service-row">
@@ -129,7 +99,6 @@
                         </div>
                     </div>
                 </div>
-                        
                 <div class="col-md-3">
                     <div class="service-row">
                         <img style="width:100%;" class="img-responsive" src="${listPNew[1].productImg}" />
@@ -139,7 +108,6 @@
                         </div>
                     </div>
                 </div>
-                        
                 <div class="col-md-3">
                     <div class="service-row">
                         <img style="width:100%;" class="img-responsive" src="${listPNew[2].productImg}" />
@@ -167,7 +135,6 @@
                     </p>
                 </div>
             </div>
-
             <div class="row">
                 <c:forEach items="${listBest}" var="b">
                     <div class="col-md-3">
@@ -228,12 +195,9 @@
                         <img class="img-responsive" src="images/saleoff.png" />
                     </div>
                 </div>
-
                 <div class="col-md-4">
                     <div>
                         <img class="img-responsive" src="images/freeship.png" />
-
-
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -243,86 +207,47 @@
                 </div>
             </div>
         </div>
-
-
         <div class="container-fluid ">
-            
-            
-            
             <div class="row">
-                
             </div>
             <div class="row_footer1">
-                
                 <div class="col-md-3  custom_footer custom_footer1">
                     <h3>Menu</h3>
                     <ul class="list">
-                        
                         <li class="firstItem"><a title="" href="/test1.html">Home</a></li>
-                        
                         <li><a title="" href="/collections/all">Shop</a></li>
-                        
                         <li><a title="" href="/blogs/blog">Blog</a></li>
-
                         <li><a title="" href="/pages/about-us">About Us</a></li>
-
-
-
-
                         <li class="lastItem"><a title="" href="/pages/contact-us">Contact us</a></li>
-
                     </ul>
                 </div>
                 <div class="col-md-3  custom_footer custom_footer2">
-                    
-                    <h3>Collections</h3>                           
+                    <h3>Collections</h3>
                     <ul class="list">
-                        
-                        <li class=" firstItem"><a title="" href="/collections/brands">Fashion</a><li>
-                            
+                        <li class=" firstItem"><a title="" href="/collections/brands">Fashion</a>
+                        </li>
                         <li><a title="" href="/collections/kids">Equiment</a></li>
-                        
                         <li><a title="" href="/collections/women-s">Accessories</a></li>
-                        
                         <li><a title="" href="/collections/footwear">Other</a></li>
-                        
-                        
-                        
                     </ul>
-                    
                 </div>
-                
-                
-                
                 <div class="col-md-3  custom_footer custom_footer3">
                     <h3>Information</h3>
                     <ul class="list">
-                        
                         <li class="firstItem"><a title="" href="/account">My account</a></li>
-                        
                         <li><a title="" href="/account/addresses">My addresses</a></li>
-                        
                         <li class="lastItem"><a title="" href="/cart">My cart</a></li>
-                        
                     </ul>
                 </div>
-                
                 <div class="col-md-3  custom_footer custom_footer4">
-                    
                     <h3>Contacts</h3>
                     <ul>
-                        
-                        <li class="firstItem">4578 Marmora Road, Glasgow D04 89GR Tel 1(234) 567-9842</li>
+                        <li class="firstItem">4578 Marmora Road, Glasgow D04 89GR Tel 1(234) 567-9842
+                        </li>
                         <li class="lastItem">Email: <a href="mailto:info@demolink.org">shopGift@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
-
-            
         </div>
-
-
-
     </body>
-
 </html>

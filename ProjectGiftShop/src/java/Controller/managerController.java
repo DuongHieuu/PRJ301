@@ -19,7 +19,7 @@ import model.Product;
  *
  * @author dthie
  */
-public class homePageController extends HttpServlet {
+public class managerController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -36,10 +36,10 @@ public class homePageController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet homePageController</title>");  
+            out.println("<title>Servlet managerController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet homePageController at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet managerController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -56,20 +56,12 @@ public class homePageController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        ProductDAO pd = new ProductDAO();
-        ArrayList<Product> productsNew = new ArrayList<>();
-        ArrayList<Product> productsBest = new ArrayList<>();
         ArrayList<Product> products = new ArrayList<>();
-        
-        productsNew = pd.get4NewProducts();
-        productsBest = pd.get4BestSell();
+        ProductDAO pd = new ProductDAO();
+
         products = pd.getProducts();
-        
-        
-        request.setAttribute("listPNew", productsNew);
-        request.setAttribute("listPBest", productsBest);
         request.setAttribute("listP", products);
-        request.getRequestDispatcher("homePage.jsp").forward(request, response);
+        request.getRequestDispatcher("manager.jsp").forward(request, response);
     } 
 
     /** 
