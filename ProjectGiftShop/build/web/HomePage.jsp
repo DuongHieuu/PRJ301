@@ -120,7 +120,9 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="service-row">
-                        <img style="width:100%;" class="img-responsive" src="${listPNew[0].productImg}" />
+                        <a href="productController?pid=${listPNew[0].pid}" > 
+                            <img style="width:100%;" class="img-responsive" src="${listPNew[0].productImg}" />
+                        </a>
                         <div class="service-item">
                             <h3>Beauty and Cute</h3>
                             <p>Always in style!</p>
@@ -129,7 +131,9 @@
                 </div>
                 <div class="col-md-3">
                     <div class="service-row">
-                        <img style="width:100%;" class="img-responsive" src="${listPNew[1].productImg}" />
+                        <a href="productController?pid=${listPNew[1].pid}" > 
+                            <img style="width:100%;" class="img-responsive" src="${listPNew[1].productImg}" />
+                        </a>
                         <div class="service-item">
                             <h3>Always On Top</h3>
                             <p>All eyes on you</p>
@@ -138,7 +142,9 @@
                 </div>
                 <div class="col-md-3">
                     <div class="service-row">
-                        <img style="width:100%;" class="img-responsive" src="${listPNew[2].productImg}" />
+                        <a href="productController?pid=${listPNew[2].pid}" > 
+                            <img style="width:100%;" class="img-responsive" src="${listPNew[2].productImg}" />
+                        </a>
                         <div class="service-item">
                             <h3>Look perfect.</h3>
                             <p>Discover the difference.</p>
@@ -147,7 +153,9 @@
                 </div>
                 <div class="col-md-3">
                     <div class="service-row">
-                        <img style="width:100%; "  class="img-responsive" src="${listPNew[3].productImg} "  />
+                        <a href="productController?pid=${listPNew[3].pid}" > 
+                            <img style="width:100%; "  class="img-responsive" src="${listPNew[3].productImg} "  />
+                        </a>
                         <div class="service-item">
                             <h3>Just Perfect</h3>
                             <p>Don't worry, we have it.</p>
@@ -167,7 +175,8 @@
                 <c:forEach items="${listBest}" var="b">
                     <div class="col-md-3">
                         <div>
-                            <img src="${b.productImg}" class="img-responsive" />
+                            <a href="productController?pid=${b.pid}" > 
+                                <img src="${b.productImg}" class="img-responsive" /></a>
                             <div class="item">
                                 <p class="item-title">${b.productName}</p>
                                 <p class="item-description">
@@ -195,7 +204,8 @@
                 <c:forEach items= "${listP}" begin="0" end="7" var="p">
                     <div class="col-md-3">
                         <div>
-                            <img src="${p.productImg}" class="img-responsive" />
+                            <a href="productController?pid=${p.pid}" > 
+                                <img src="${p.productImg}" class="img-responsive" /></a>
                             <div class="item">
                                 <p class="item-title">${p.productName}</p>
                                 <p class="item-description">

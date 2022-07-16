@@ -30,11 +30,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     padding-left:10px;
     padding-top: 10px;
     padding-right: 10px;
-        padding-bottom: 2px;
+    padding-bottom: 2px;
 
 }
 .item-title {
     border-bottom: 2px dashed rgb(151, 149, 149);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .item-description {
     margin-bottom: 20px;
@@ -75,30 +78,30 @@ img{
     color: #1a1a1a;
 }
 
-    .header_search #search-field {
-        width: 100%;
-        height: 46px;
-        float: left;
-        padding: 0 46px 0 10px;
-        border: 1px solid #dddddd;
-    }
+.header_search #search-field {
+    width: 100%;
+    height: 46px;
+    float: left;
+    padding: 0 46px 0 10px;
+    border: 1px solid #dddddd;
+}
 
-    .header_user a {
-        height: 46px;
-        display: block;
-        float: left;
-        background: #e7e7e7;
-        padding: 0 15px;
-        font: 700 15px/47px Roboto;
-        color: #000;
-        text-decoration: none;
-        text-transform: uppercase;
-        }
-   .container-fluid{
-       margin-top: 12px;
-       margin-left: 15px;
-       margin-right: 15px;
-   }     
+.header_user a {
+    height: 46px;
+    display: block;
+    float: left;
+    background: #e7e7e7;
+    padding: 0 15px;
+    font: 700 15px/47px Roboto;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.container-fluid{
+    margin-top: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
 .row{
     margin: 10px 0px 20px 0px;
@@ -133,7 +136,7 @@ img{
 #customer_manager_link{
     border-right: 3px solid #ffffff;
     background-color: #fec108
-    ;
+        ;
     color: #000;
 }
 #customer_cart_link{
@@ -142,73 +145,73 @@ img{
     margin-right: 0px;
 
 }
-    .custom_footer h3 {
-        padding: 25px 0 9px;
-        border-bottom: 3px solid #000000;
-        font: 700 16px Roboto;
-        color: #000;
-        text-transform: uppercase;
-    }
+.custom_footer h3 {
+    padding: 25px 0 9px;
+    border-bottom: 3px solid #000000;
+    font: 700 16px Roboto;
+    color: #000;
+    text-transform: uppercase;
+}
 
-    .list,
-    ul {
-        list-style: none;
-    }
+.list,
+ul {
+    list-style: none;
+}
 
-    .custom_footer ul {
-        padding: 15px 0 0;
-    }
+.custom_footer ul {
+    padding: 15px 0 0;
+}
 
-    .custom_footer ul li {
-        padding: 2px 0 0;
-    }
-    
-    .custom_footer ul li a {
-        font-weight: 700;
-        color: black;
+.custom_footer ul li {
+    padding: 2px 0 0;
+}
 
-    }
+.custom_footer ul li a {
+    font-weight: 700;
+    color: black;
 
-    .btn-default {
-        color: #333;
-        background-color: #fff;
-        border-color: #ccc;
-        padding-top: 8px;
-        margin-top: 3px;
-    }
-    #add_cart{
-        float: right;
-        text-decoration: underline;
-        background-color: #1a1a1a;
-        color: white;
-        padding: 5px;
-    }
+}
 
-    .col-md-3{
-        margin-bottom: 20px;
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    padding-top: 8px;
+    margin-top: 3px;
+}
+#add_cart{
+    float: right;
+    text-decoration: underline;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 5px;
+}
 
-     }
+.col-md-3{
+    margin-bottom: 20px;
 
-    #pagination span {
-        display: block;
-        float: left;
-        border: 1px solid #dddddd;
-        border-width: 1px;
-    }
-    #pagination{
-        float: right;
-        margin-right: 1%;
-    }
-     #pagination span a
-     {
-        display: block;
-        padding: 7px 10px;
-        color: #000;
-        text-decoration: none;
-    }
+}
 
-    #pagination span.current {
-        background: #db1d24;
-        font-weight: 700;
+#pagination span {
+    display: block;
+    float: left;
+    border: 1px solid #dddddd;
+    border-width: 1px;
+}
+#pagination{
+    float: right;
+    margin-right: 1%;
+}
+#pagination span a
+{
+    display: block;
+    padding: 7px 10px;
+    color: #000;
+    text-decoration: none;
+}
 
-    }
+#pagination span.current {
+    background: #db1d24;
+    font-weight: 700;
+
+}

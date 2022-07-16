@@ -157,7 +157,9 @@
                 <c:forEach items="${listP}" var="p">
                     <div class="col-md-3">
                         <div>
-                            <img src="${p.productImg}" class="img-responsive" />
+                            <a href="productController?pid=${p.pid}" > 
+                                <img src="${p.productImg}" class="img-responsive" />
+                            </a>
                             <div class="item">
                                 <p class="item-title">${p.productName}</p>
                                 <p class="item-description">
