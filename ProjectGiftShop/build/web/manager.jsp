@@ -8,7 +8,6 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/stylepage.css" />
         <link rel="stylesheet" href="css/dropdownstyle.css" />
-
         <link rel="stylesheet" href="css/managerStyle.css" />
     </head>
     <body>
@@ -16,9 +15,7 @@
             <div class="row">
                 <div class="col-sm-12 col-lg-3 logo_wrap">
                     <a id="logo" href="home.jsp">
-
                         <b>GiftShop</b>
-
                         <span>Gift & Accessories</span>
                     </a>
                 </div>
@@ -27,10 +24,8 @@
                     <div class="header_row-2-search">
                         <!-- HEADER SEARCH -->
                         <div class="header_search">
-
                             <form action="/search" method="get" >
                                 <div class="col-xs-9  col-lg-8 ">
-
                                     <input id="search-field" name="q" type="search" placeholder="Search store..."
                                            />
                                 </div>
@@ -38,98 +33,63 @@
                                     <button type="submit" class="btn btn-default">                                       
                                         Search
                                     </button>
-
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 header_row-both">
-
                     <div class="header_user">
-
                         <!-- USER MENU -->
-
                         <c:choose>
                             <c:when test="${sessionScope.acc==null}">
                                 <a href="login.jsp" id="customer_login_link">Log in</a>
                                 <a href="signup.jsp" id="customer_register_link">Create an account</a>
-
-
-                        <a class="header_cart" href="#" id="customer_cart_link"><b>Cart</b><span
-
-                        class="cart-items"></span></a>
+                                <a class="header_cart" href="#" id="customer_cart_link"><b>Cart</b><span
+                                        class="cart-items"></span></a>
                                 </c:when>
                                 <c:when test="${sessionScope.acc!=null && sessionScope.acc.isAdmin!=true }">
                                 <a href="login" id="customer_login_link">Log out</a>
                                 <a href="homePageController" id="customer_register_link">Hello: ${sessionScope.acc.user}</a>
-
                                 <a class="header_cart" href="#" id="customer_cart_link"><b>Cart</b><span
-
-
-                         class="cart-items"></span></a>
+                                        class="cart-items"></span></a>
                                 </c:when>
                                 <c:when test="${sessionScope.acc!=null && sessionScope.acc.isAdmin==true }">
                                 <a href="login" id="customer_login_link">Log out</a>
                                 <a href="homePageController" id="customer_register_link">Hello: ${sessionScope.acc.user}</a>
                                 <a href="managerController" id="customer_manager_link">Manager</a>
-
                                 <a class="header_cart" href="#" id="customer_cart_link"><b>Cart</b><span
-
-
                                         class="cart-items"></span></a>
-
-                            </c:when>
-
-
-
-
-                        </c:choose>
-
+                                </c:when>
+                            </c:choose>
                     </div>
                 </div>
-
             </div>
             <div class="row-Menu">
                 <div class="clearfix" id="navigation">
                     <ul class="sf-menu">
-
-
                         <li class="active firstItem">
                             <a  href="homePageController">Home</a>
-
                         </li>
-
                         <li class="">
                             <a  href="shopController">Shop</a>
                         </li>
-
-
                         <li>
                             <a  href="#">About Us</a>
-
                         </li>
-
-
                         <li class="last lastItem">
                             <a  href="#">Contact us</a>
-
                         </li>
-
                     </ul>
                 </div>
             </div>
-
-
         </div>
-
         <div class="container">
             <div class="manager_bannerSet">
                 <div class="manager_left">
                     <b>Manager System</b> 
                     <a href="addProductController">AddProduct</a>
                 </div>
-
             </div>
             <div class="managet_product">
                 <table class="table bordered 3px ">
@@ -140,7 +100,6 @@
                             <td><b>IMG</b></td>
                             <td><b>Price</b></td>
                             <td><b>Action</b></td>
-
                         </tr>
                     </thead>
                     <c:forEach items="${listP}" var="p">
@@ -159,85 +118,78 @@
                                 <a href="#" id="bt_delete" onclick="confirmDelete(${p.pid})">
                                     <img style="width:30px;"
                                          src="images/deleteIcon.png" /></a>
+                                
                             </td>
-
                         </tr>
                     </c:forEach>
 
                 </table>
             </div>
+            <div class="row">
 
+
+                <div id="pagination">
+
+                    <span class="prev"><a title="" href="managerController?page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
+                            Previous</a></span>
+                            <c:forEach begin="1" end="${totalpage}" var="pg">
+                        <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="managerController?page=${pg}">${pg}</a></span>
+                        </c:forEach>
+
+                    <span class="next"><a title="" href="managerController?page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
+                            »</a></span>
+                </div>
+
+            </div>
         </div>
         <div class="container-fluid ">
             <div class="row">
-
             </div>
             <div class="row_footer1">
-
                 <div class="col-md-3  custom_footer custom_footer1">
                     <h3>Menu</h3>
                     <ul class="list">
-
                         <li class="firstItem"><a title="" href="homePageController">Home</a></li>
-
                         <li><a title="" href="/collections/all">Shop</a></li>
-
                         <li><a title="" href="/blogs/blog">Blog</a></li>
-
                         <li><a title="" href="/pages/about-us">About Us</a></li>
-
-
-
                         <li class="lastItem"><a title="" href="/pages/contact-us">Contact us</a></li>
-
                     </ul>
                 </div>
                 <div class="col-md-3  custom_footer custom_footer2">
                     <h3>Collections</h3>
                     <ul class="list">
-
                         <li class=" firstItem"><a title="" href="/collections/brands">Fashion</a>
                         </li>
-
                         <li><a title="" href="/collections/kids">Equiment</a></li>
-
                         <li><a title="" href="/collections/women-s">Accessories</a></li>
-
                         <li><a title="" href="/collections/footwear">Other</a></li>
-
-
-
                     </ul>
                 </div>
-
-
-
                 <div class="col-md-3  custom_footer custom_footer3">
                     <h3>Information</h3>
                     <ul class="list">
-
                         <li class="firstItem"><a title="" href="/account">My account</a></li>
-
                         <li><a title="" href="/account/addresses">My addresses</a></li>
-
                         <li class="lastItem"><a title="" href="/cart">My cart</a></li>
-
                     </ul>
                 </div>
-
                 <div class="col-md-3  custom_footer custom_footer4">
                     <h3>Contacts</h3>
                     <ul>
-
                         <li class="firstItem">4578 Marmora Road, Glasgow D04 89GR Tel 1(234) 567-9842
                         </li>
-
                         <li class="lastItem">Email: <a href="mailto:info@demolink.org">shopGift@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
-
-
         </div>
     </body>
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Are you want to delete product have Id: ' + id + '?')) {
+                window.location.href = 'deleteProductController?pid=' + id;
+                window.alert('Delete successfully!');
+            }
+    </script>
 </html>

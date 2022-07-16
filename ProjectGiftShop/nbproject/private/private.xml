@@ -2,25 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/homePage.jsp</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/css/managerStyle.css</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/addProduct.jsp</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/shop.jsp</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/DAL/ProductDAO.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/addProductController.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/css/dropdownstyle.css</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/shopController.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/css/formStyle.css</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/manager.jsp</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/homePageController.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/deleteProductController.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/DAL/BaseDAO.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/DAL/CategoryDAO.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/managerController.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/categoryController.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

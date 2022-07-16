@@ -16,8 +16,9 @@ import model.Product;
  *
  * @author dthie
  */
-public class ProductDAO extends BaseDAO<Object>{
-     public ArrayList<Product> get4NewProducts() {
+public class ProductDAO extends BaseDAO<Object> {
+
+    public ArrayList<Product> get4NewProducts() {
         ArrayList<Product> products = new ArrayList<>();
         try {
             String sqlquery = "SELECT Top 4 [pid]\n"
@@ -46,11 +47,11 @@ public class ProductDAO extends BaseDAO<Object>{
         }
         return products;
     }
-     
-     public ArrayList<Product> get4BestSell(){
-         ArrayList<Product> products = new ArrayList<>();
-         try {
-             String sqlquery = "Select p.[pid]\n"
+
+    public ArrayList<Product> get4BestSell() {
+        ArrayList<Product> products = new ArrayList<>();
+        try {
+            String sqlquery = "Select p.[pid]\n"
                     + "      ,p.[productname]\n"
                     + "      ,p.[productimg]\n"
                     + "      ,p.[productprice]\n"
@@ -61,10 +62,10 @@ public class ProductDAO extends BaseDAO<Object>{
                     + " Order by TotalProduct Desc) t, Product p\n"
                     + " where p.pid = t.pid";
 
-             PreparedStatement statement = connection.prepareStatement(sqlquery);
-             ResultSet rs = statement.executeQuery();
-             while (rs.next()){
-                 Product p = new Product();
+            PreparedStatement statement = connection.prepareStatement(sqlquery);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
                 p.setPid(rs.getInt("pid"));
                 p.setProductName(rs.getString("productname"));
                 p.setProductImg(rs.getString("productimg"));
@@ -72,62 +73,29 @@ public class ProductDAO extends BaseDAO<Object>{
                 p.setProductNote(rs.getString("productnote"));
                 p.setCid(rs.getInt("cid"));
                 products.add(p);
-                
-             }
-         } catch (Exception ex) {
-             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
-         }
-         return products;
-     }
-     
-     public ArrayList<Product> getProducts(){
-         ArrayList<Product> products = new ArrayList<>();
-         try {
-             String sqlquery = "SELECT  [pid]\n"
+
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return products;
+    }
+
+    public ArrayList<Product> getProducts() {
+        ArrayList<Product> products = new ArrayList<>();
+        try {
+            String sqlquery = "SELECT  [pid]\n"
                     + "      ,[productname]\n"
                     + "      ,[productimg]\n"
                     + "      ,[productprice]\n"
                     + "      ,[productnote]\n"
                     + "      ,[cid]\n"
                     + "  FROM [giftShopDb].[dbo].[Product]";
-             
-             PreparedStatement statement = connection.prepareStatement(sqlquery);
-             ResultSet rs = statement.executeQuery();
-             
-             while (rs.next()){
-                 Product p = new Product();
-                p.setPid(rs.getInt("pid"));
-                p.setProductName(rs.getString("productname"));
-                p.setProductImg(rs.getString("productimg"));
-                p.setProductPrice(rs.getInt("productprice"));
-                p.setProductNote(rs.getString("productnote"));
-                p.setCid(rs.getInt("cid"));
-                products.add(p);
-             }
-         } catch (SQLException ex) {
-             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
-         }
-         return products;
-     }
 
-    public ArrayList<Product> getProductByCategoryId(int id) {
-        try {
-            ArrayList<Product> products = new ArrayList<>();
-            
-            String sql = "SELECT  [pid]\n"
-                    + "      ,[productname]\n"
-                    + "      ,[productimg]\n"
-                    + "      ,[productprice]\n"
-                    + "      ,[productnote]\n"
-                    + "      ,[cid]\n"
-                    + "  FROM [Product]\n"
-                    + "  Where [cid]= ?\n"
-                    + "  ";
-            
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, id);
+            PreparedStatement statement = connection.prepareStatement(sqlquery);
             ResultSet rs = statement.executeQuery();
-            while (rs.next()){
+
+            while (rs.next()) {
                 Product p = new Product();
                 p.setPid(rs.getInt("pid"));
                 p.setProductName(rs.getString("productname"));
@@ -138,9 +106,42 @@ public class ProductDAO extends BaseDAO<Object>{
                 products.add(p);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null , ex);
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-         return null;
+        return products;
+    }
+
+    public ArrayList<Product> getProductByCategoryId(int id) {
+        try {
+            ArrayList<Product> products = new ArrayList<>();
+
+            String sql = "SELECT  [pid]\n"
+                    + "      ,[productname]\n"
+                    + "      ,[productimg]\n"
+                    + "      ,[productprice]\n"
+                    + "      ,[productnote]\n"
+                    + "      ,[cid]\n"
+                    + "  FROM [Product]\n"
+                    + "  Where [cid]= ?\n"
+                    + "  ";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setPid(rs.getInt("pid"));
+                p.setProductName(rs.getString("productname"));
+                p.setProductImg(rs.getString("productimg"));
+                p.setProductPrice(rs.getInt("productprice"));
+                p.setProductNote(rs.getString("productnote"));
+                p.setCid(rs.getInt("cid"));
+                products.add(p);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
     public void deleteProduct(int id) {
@@ -150,12 +151,12 @@ public class ProductDAO extends BaseDAO<Object>{
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE,null,ex);
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public void insertProduct(Product p) {
-         try {
+        try {
             String sql = "INSERT INTO Product(productname,productimg,productprice,productnote,cid)\n"
                     + "Values (?,?,?,?,?)";
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -170,7 +171,7 @@ public class ProductDAO extends BaseDAO<Object>{
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
+
     }
 
     public Product getProductById(int id) {
@@ -226,6 +227,127 @@ public class ProductDAO extends BaseDAO<Object>{
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
+
+    }
+
+    public int getTotalPage() {
+        int totalPage = 0;
+        try {
+            String sql = "SELECT COUNT(pid)as totalproduct From Product";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                int totalProduct = rs.getInt("totalproduct");
+                totalPage = totalProduct / 12;
+                if (totalProduct % 12 != 0) {
+                    totalPage++;
+                }
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return totalPage;
+    }
+
+    public ArrayList<Product> getProductWithPaging(int inđex) {
+        ArrayList<Product> products = new ArrayList<>();
+        try {
+            String sqlquery = "SELECT * From (\n"
+                    + "SELECT  [pid]\n"
+                    + "      ,[productname]\n"
+                    + "      ,[productimg]\n"
+                    + "      ,[productprice]\n"
+                    + "      ,[productnote]\n"
+                    + "      ,[cid], ROW_NUMBER() OVER(ORDER BY [pid]) RN\n"
+                    + "  FROM [giftShopDb].[dbo].[Product] \n"
+                    + "  ) t\n"
+                    + "WHERE RN BETWEEN ? AND ?";
+
+            PreparedStatement statement = connection.prepareStatement(sqlquery);
+            statement.setInt(1, inđex * 12 - 11);
+            statement.setInt(2, inđex * 12);
+
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setPid(rs.getInt("pid"));
+                p.setProductName(rs.getString("productname"));
+                p.setProductImg(rs.getString("productimg"));
+                p.setProductPrice(rs.getInt("productprice"));
+                p.setProductNote(rs.getString("productnote"));
+                p.setCid(rs.getInt("cid"));
+                products.add(p);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return products;
+    }
+
+    public int getTotalPageByCategory(int cid) {
+        int totalPage = 0;
+        try {
+            String sql = " SELECT COUNT(pid)as totalproduct\n"
+                    + "  FROM [giftShopDb].[dbo].[Product] \n"
+                    + " Where cid =?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, cid);
+
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                int totalProduct = rs.getInt("totalproduct");
+                totalPage = totalProduct / 12;
+                if (totalProduct % 12 != 0) {
+                    totalPage++;
+                }
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return totalPage;
+    }
+
+    public ArrayList<Product> getProductByCategoryWithPaging(int cid, int inđex) {
+        ArrayList<Product> products = new ArrayList<>();
+        try {
+            String sqlquery = "SELECT * From (\n"
+                    + "SELECT  [pid]\n"
+                    + "      ,[productname]\n"
+                    + "      ,[productimg]\n"
+                    + "      ,[productprice]\n"
+                    + "      ,[productnote]\n"
+                    + "      ,[cid], ROW_NUMBER() OVER(ORDER BY [pid]) RN\n"
+                    + "  FROM [giftShopDb].[dbo].[Product] \n"
+                    + "   Where [cid] = ?\n"
+                    + "  ) t\n"
+                    + "WHERE RN BETWEEN ? AND ?";
+
+            PreparedStatement statement = connection.prepareStatement(sqlquery);
+            statement.setInt(1, cid);
+
+            statement.setInt(2, inđex * 12 - 11);
+            statement.setInt(3, inđex * 12);
+
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Product p = new Product();
+                p.setPid(rs.getInt("pid"));
+                p.setProductName(rs.getString("productname"));
+                p.setProductImg(rs.getString("productimg"));
+                p.setProductPrice(rs.getInt("productprice"));
+                p.setProductNote(rs.getString("productnote"));
+                p.setCid(rs.getInt("cid"));
+                products.add(p);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return products;
     }
 }

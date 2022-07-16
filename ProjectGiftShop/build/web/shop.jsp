@@ -57,9 +57,9 @@
                                 <a href="signup.jsp" id="customer_register_link">Create an account</a>
 
 
-                        <a class="header_cart" href="#" id="customer_cart_link"><b>Cart</b><span
+                                <a class="header_cart" href="#" id="customer_cart_link"><b>Cart</b><span
 
-                        class="cart-items"></span></a>
+                                        class="cart-items"></span></a>
                                 </c:when>
                                 <c:when test="${sessionScope.acc!=null && sessionScope.acc.isAdmin!=true }">
                                 <a href="login" id="customer_login_link">Log out</a>
@@ -68,7 +68,7 @@
                                 <a class="header_cart" href="#" id="customer_cart_link"><b>Cart</b><span
 
 
-                        class="cart-items"></span></a>
+                                        class="cart-items"></span></a>
                                 </c:when>
                                 <c:when test="${sessionScope.acc!=null && sessionScope.acc.isAdmin==true }">
                                 <a href="login" id="customer_login_link">Log out</a>
@@ -96,7 +96,7 @@
                     <ul class="sf-menu">
 
                         <li class="first ${cid==null?"active":""} firstItem">
-                            <a  href="/">Shop</a>
+                            <a  href="shopController">Shop</a>
                         </li>
 
                         <li class="has-dropdown">
@@ -198,77 +198,115 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid ">
             <div class="row">
 
+                <c:choose>
+
+
+                    <c:when test="${iscategory==true }">
+                        <div id="pagination">
+
+                            <span class="prev"><a title="" href="categoryController?cid=${cid}&page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
+                                    Previous</a></span>
+                                    <c:forEach begin="1" end="${totalpage}" var="pg">
+                                <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="categoryController?cid=${cid}&page=${pg}">${pg}</a></span>
+                                </c:forEach>
+
+                            <span class="next"><a title="" href="categoryController?cid=${cid}&page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
+                                    »</a></span>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div id="pagination">
+
+                            <span class="prev"><a title="" href="shopController?page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
+                                    Previous</a></span>
+                                    <c:forEach begin="1" end="${totalpage}" var="pg">
+                                <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="shopController?page=${pg}">${pg}</a></span>
+                                </c:forEach>
+
+                            <span class="next"><a title="" href="shopController?page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
+                                    »</a></span>
+                        </div>
+                    </c:otherwise>
+
+
+
+                </c:choose>
             </div>
-            <div class="row_footer1">
-
-                <div class="col-md-3  custom_footer custom_footer1">
-                    <h3>Menu</h3>
-                    <ul class="list">
-
-                        <li class="firstItem"><a title="" href="/test1.html">Home</a></li>
-
-                        <li><a title="" href="/collections/all">Shop</a></li>
-
-                        <li><a title="" href="/blogs/blog">Blog</a></li>
-
-                        <li><a title="" href="/pages/about-us">About Us</a></li>
-
-
-
-                        <li class="lastItem"><a title="" href="/pages/contact-us">Contact us</a></li>
-
-                    </ul>
-                </div>
-                <div class="col-md-3  custom_footer custom_footer2">
-                    <h3>Collections</h3>
-                    <ul class="list">
-
-                        <li class=" firstItem"><a title="" href="/collections/brands">Fashion</a>
-                        </li>
-
-                        <li><a title="" href="/collections/kids">Equiment</a></li>
-
-                        <li><a title="" href="/collections/women-s">Accessories</a></li>
-
-                        <li><a title="" href="/collections/footwear">Other</a></li>
-
-
-
-                    </ul>
-                </div>
-
-
-
-                <div class="col-md-3  custom_footer custom_footer3">
-                    <h3>Information</h3>
-                    <ul class="list">
-
-                        <li class="firstItem"><a title="" href="/account">My account</a></li>
-
-                        <li><a title="" href="/account/addresses">My addresses</a></li>
-
-                        <li class="lastItem"><a title="" href="/cart">My cart</a></li>
-
-                    </ul>
-                </div>
-
-                <div class="col-md-3  custom_footer custom_footer4">
-                    <h3>Contacts</h3>
-                    <ul>
-
-                        <li class="firstItem">4578 Marmora Road, Glasgow D04 89GR Tel 1(234) 567-9842
-                        </li>
-
-                        <li class="lastItem">Email: <a href="mailto:info@demolink.org">shopGift@gmail.com</a></li>
-                    </ul>
-                </div>
-            </div>
-
 
         </div>
-    </body>
+    </div>
+    <div class="container-fluid ">
+        <div class="row">
+
+        </div>
+        <div class="row_footer1">
+
+            <div class="col-md-3  custom_footer custom_footer1">
+                <h3>Menu</h3>
+                <ul class="list">
+
+                    <li class="firstItem"><a title="" href="/test1.html">Home</a></li>
+
+                    <li><a title="" href="/collections/all">Shop</a></li>
+
+                    <li><a title="" href="/blogs/blog">Blog</a></li>
+
+                    <li><a title="" href="/pages/about-us">About Us</a></li>
+
+
+
+                    <li class="lastItem"><a title="" href="/pages/contact-us">Contact us</a></li>
+
+                </ul>
+            </div>
+            <div class="col-md-3  custom_footer custom_footer2">
+                <h3>Collections</h3>
+                <ul class="list">
+
+                    <li class=" firstItem"><a title="" href="/collections/brands">Fashion</a>
+                    </li>
+
+                    <li><a title="" href="/collections/kids">Equiment</a></li>
+
+                    <li><a title="" href="/collections/women-s">Accessories</a></li>
+
+                    <li><a title="" href="/collections/footwear">Other</a></li>
+
+
+
+                </ul>
+            </div>
+
+
+
+            <div class="col-md-3  custom_footer custom_footer3">
+                <h3>Information</h3>
+                <ul class="list">
+
+                    <li class="firstItem"><a title="" href="/account">My account</a></li>
+
+                    <li><a title="" href="/account/addresses">My addresses</a></li>
+
+                    <li class="lastItem"><a title="" href="/cart">My cart</a></li>
+
+                </ul>
+            </div>
+
+            <div class="col-md-3  custom_footer custom_footer4">
+                <h3>Contacts</h3>
+                <ul>
+
+                    <li class="firstItem">4578 Marmora Road, Glasgow D04 89GR Tel 1(234) 567-9842
+                    </li>
+
+                    <li class="lastItem">Email: <a href="mailto:info@demolink.org">shopGift@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</body>
 </html>
