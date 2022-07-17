@@ -95,7 +95,7 @@
 
 
                         <li>
-                            <a  href="#">About Us</a>
+                            <a  href="aboutusController">About Us</a>
                         </li>
                         <li class="last lastItem">
                             <a  href="#">Contact us</a>
@@ -254,7 +254,7 @@
                     <ul class="list">
                         <li class="firstItem"><a title="" href="homePageController">Home</a></li>
                         <li><a title="" href="shopController">Shop</a></li>
-                        <li><a title="" href="#">About Us</a></li>
+                        <li><a title="" href="aboutusController">About Us</a></li>
                         <li class="lastItem"><a title="" href="#">Contact us</a></li>
                     </ul>
                 </div>

@@ -114,7 +114,7 @@
 
 
                         <li>
-                            <a  href="#">About Us</a>
+                            <a  href="aboutusController">About Us</a>
 
                         </li>
 
@@ -345,7 +345,7 @@
 
                         <li><a title="" href="shopController">Shop</a></li>
 
-                        <li><a title="" href="#">About Us</a></li>
+                        <li><a title="" href="aboutusController">About Us</a></li>
 
 
 
