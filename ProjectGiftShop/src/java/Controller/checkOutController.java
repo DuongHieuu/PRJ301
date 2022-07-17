@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import DAL.CustomerAccountDAO;
 import DAL.CustomerDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,8 +14,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
+import model.Account;
 import model.Cart;
 import model.Customer;
+import model.CustomerAccount;
 
 /**
  *
@@ -91,6 +94,7 @@ public class checkOutController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
         String firstname = request.getParameter("checkoutFName");
         String lastname = request.getParameter("checkoutFName");
         String address = request.getParameter("checkoutAddress");
@@ -109,6 +113,37 @@ public class checkOutController extends HttpServlet {
         if (custcheck == null) {
             custdao.insertCustomer(cust);
 
+            //if user login
+            if (session.getAttribute("acc") != null) {
+                CustomerAccountDAO Cad = new CustomerAccountDAO();
+                Account a = (Account) session.getAttribute("acc");
+                int lastCustId = custdao.getLastIdOfCustomer();
+                CustomerAccount ca = Cad.getCustomerAndAccountByCustIdAndAccId(lastCustId, a.getAid());
+                // if customerid and account id not exist in CustomerAccount table before
+                if (ca == null) {
+                    Cad.addCustomerAndAccount(lastCustId, a.getAid());
+                }
+
+            }//if user not login
+            else {
+
+            }
+
+        } else {
+            //if user login
+            if (session.getAttribute("acc") != null) {
+                CustomerAccountDAO Cad = new CustomerAccountDAO();
+                Account a = (Account) session.getAttribute("acc");
+                CustomerAccount ca = Cad.getCustomerAndAccountByCustIdAndAccId(custcheck.getCustid(), a.getAid());
+                // if customerid and account id not exist in CustomerAccount table before
+                if (ca == null) {
+                    Cad.addCustomerAndAccount(custcheck.getCustid(), a.getAid());
+                }
+
+            }//if user not login
+            else {
+
+            }
         }
 
     }

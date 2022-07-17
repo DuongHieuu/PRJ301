@@ -73,7 +73,7 @@ import model.Account;
             statement.setString(1, a.getUser());
             statement.setString(2, a.getPass());
 
-            ResultSet rs = statement.executeQuery();
+            statement.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
