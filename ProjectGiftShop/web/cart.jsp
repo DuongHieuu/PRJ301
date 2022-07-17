@@ -120,7 +120,7 @@
 
 
                         <li class="last lastItem">
-                            <a  href="#">Contact us</a>
+                            <a  href="contactusController">Contact us</a>
 
                         </li>
 
@@ -232,7 +232,7 @@
 
                                     <div class="cart_instructions">
                                         <label>Special instructions for seller</label>
-                                        <textarea class="form-control" name="note"></textarea>
+                                        <textarea class="form-control" name="note"  style="height: 100px;"></textarea>
                                     </div>
 
 
@@ -349,7 +349,7 @@
 
 
 
-                        <li class="lastItem"><a title="" href="#">Contact us</a></li>
+                        <li class="lastItem"><a title="" href="contactusController">Contact us</a></li>
 
                     </ul>
                 </div>

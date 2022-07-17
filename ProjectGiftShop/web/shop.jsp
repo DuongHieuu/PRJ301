@@ -100,7 +100,7 @@
                         </li>
 
                         <li class="has-dropdown">
-                            <a title="" class="${cid!=null?"active":""}" href="#">Catalog</a>
+                            <a title="" class="${cid!=null?"active":""}">Catalog</a>
 
 
                             <ul class="sub-menu" style="width: 235px; ">
@@ -122,7 +122,7 @@
 
 
                         <li class="last lastItem">
-                            <a  href="#">Contact us</a>
+                            <a  href="contactusController">Contact us</a>
 
                         </li>
 
@@ -267,7 +267,7 @@
 
                     <li><a title="" href="aboutusController">About Us</a></li>
 
-                    <li class="lastItem"><a title="" href="#">Contact us</a></li>
+                    <li class="lastItem"><a title="" href="contactusController">Contact us</a></li>
 
                 </ul>
             </div>

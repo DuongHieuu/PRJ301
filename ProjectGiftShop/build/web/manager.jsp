@@ -78,7 +78,7 @@
                             <a  href="aboutusController">About Us</a>
                         </li>
                         <li class="last lastItem">
-                            <a  href="#">Contact us</a>
+                            <a  href="contactusController">Contact us</a>
                         </li>
                     </ul>
                 </div>
@@ -152,7 +152,7 @@
                         <li class="firstItem"><a title="" href="homePageController">Home</a></li>
                         <li><a title="" href="shopController">Shop</a></li>
                         <li><a title="" href="aboutusController">About Us</a></li>
-                        <li class="lastItem"><a title="" href="#">Contact us</a></li>
+                        <li class="lastItem"><a title="" href="contactusController">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3  custom_footer custom_footer2">

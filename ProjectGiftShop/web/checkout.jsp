@@ -120,7 +120,7 @@
 
 
                         <li class="last lastItem">
-                            <a  href="#">Contact us</a>
+                            <a  href="contactusController">Contact us</a>
 
                         </li>
 
@@ -265,7 +265,7 @@
 
 
 
-                        <li class="lastItem"><a title="" href="#">Contact us</a></li>
+                        <li class="lastItem"><a title="" href="contactusController">Contact us</a></li>
 
                     </ul>
                 </div>
