@@ -48,8 +48,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 
-.product_desc,.product_pricecheckout,.product_total{
+.product_pricecheckout,.product_total{
     margin-top: 4px;
+    font: 600 16px Roboto;
 }
 
 .column .product{
