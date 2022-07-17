@@ -67,7 +67,8 @@ public class shopController extends HttpServlet {
         CategoryDAO cd = new CategoryDAO();
         listCategory =  cd.getCategory();
         int totalPage = 0;
-        totalPage = pd.getTotalPage();
+        int pagesize = 12;
+        totalPage = pd.getTotalPage(pagesize);
         String pageCurrent = request.getParameter("page");
         int pageC = 0;
         if (pageCurrent == null) {
@@ -77,7 +78,7 @@ public class shopController extends HttpServlet {
 
         }
 
-        products = pd.getProductWithPaging(pageC);
+        products = pd.getProductWithPaging(pageC, pagesize);
         request.setAttribute("totalpage", totalPage);
         request.setAttribute("pageCurrent", pageC);
         request.setAttribute("listP", products);
