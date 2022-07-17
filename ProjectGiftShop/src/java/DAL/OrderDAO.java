@@ -16,18 +16,19 @@ import model.Order;
  *
  * @author dthie
  */
-public class OrderDAO extends BaseDAO<Object>{
-    public int getLastIdOfOrder(){
+public class OrderDAO extends BaseDAO<Object> {
+
+    public int getLastIdOfOrder() {
         int lastOrderId = 0;
         try {
-            String sql = "Select TOP 1 cartid From [Order]\n"
+            String sql = "Select TOP 1 orderid From [Order]\n"
                     + "Order By orderid Desc";
             PreparedStatement statement = connection.prepareStatement(sql);
 
             ResultSet rs = statement.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
                 lastOrderId = rs.getInt("orderid");
-
+                return lastOrderId;
             }
 
         } catch (SQLException ex) {
@@ -56,11 +57,13 @@ public class OrderDAO extends BaseDAO<Object>{
             Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public static void main(String[] args) {
         OrderDAO od = new OrderDAO();
-                Date today = new Date(System.currentTimeMillis());
+        Date today = new Date(System.currentTimeMillis());
 
         Order o = new Order(1, 2, 0, today);
-        od.insertOrder(o);
+        int lastid = od.getLastIdOfOrder();
+        System.out.println(lastid);
     }
 }

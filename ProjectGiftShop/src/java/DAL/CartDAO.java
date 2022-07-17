@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Cart;
 
 /**
  *
@@ -23,9 +24,9 @@ public class CartDAO extends BaseDAO<Object>{
             PreparedStatement statement = connection.prepareStatement(sql);
 
             ResultSet rs = statement.executeQuery();
-            while (rs.next()) {
+            if (rs.next()) {
                 lastCartId = rs.getInt("cartid");
-
+                return lastCartId;
             }
 
         } catch (SQLException ex) {
@@ -33,4 +34,22 @@ public class CartDAO extends BaseDAO<Object>{
         }
         return lastCartId;
     }
+     public void insertCart(Cart cart) {
+        try {
+            String sql = "Insert Into Cart (orderid,pid,amount)\n"
+                    + "Values (?,?,?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1,cart.getCartid());
+            statement.setInt(2,cart.getProduct().getPid());
+            statement.setInt(3,cart.getAmount());
+
+
+
+            statement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
