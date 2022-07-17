@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
 package Controller;
 
 import DAL.CustomerDAO;
@@ -22,9 +21,11 @@ import model.Customer;
  * @author dthie
  */
 public class checkOutController extends HttpServlet {
-   
-    /** 
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -33,7 +34,7 @@ public class checkOutController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -59,7 +60,6 @@ public class checkOutController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         HttpSession session = request.getSession();
         if (session.getAttribute("listcart") == null) {
             response.sendRedirect("showCartController");
@@ -70,7 +70,6 @@ public class checkOutController extends HttpServlet {
             for (Cart cart : listCart) {
                 total = total + cart.getAmount() * cart.getProduct().getProductPrice();
             }
-
             discount = Math.ceil(total * 0.1 * 10.0) / 10.0;
             double subtotal = total - discount;
             request.setAttribute("discount", discount + "$");
@@ -105,10 +104,12 @@ public class checkOutController extends HttpServlet {
         cust.setPhone(phone);
 
         CustomerDAO custdao = new CustomerDAO();
-        custdao.insertCustomer(cust);
+        Customer custcheck = custdao.getCustomer(cust);
+        //check new customer has been saved in database before or not
+        if (custcheck == null) {
+            custdao.insertCustomer(cust);
 
-
-
+        }
 
     }
 
