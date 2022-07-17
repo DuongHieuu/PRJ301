@@ -13,11 +13,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.sql.Date;
 import java.util.ArrayList;
 import model.Account;
 import model.Cart;
 import model.Customer;
 import model.CustomerAccount;
+import model.Order;
 
 /**
  *
@@ -109,6 +111,8 @@ public class checkOutController extends HttpServlet {
 
         CustomerDAO custdao = new CustomerDAO();
         Customer custcheck = custdao.getCustomer(cust);
+        Date today = new Date(System.currentTimeMillis());
+
         //check new customer has been saved in database before or not
         if (custcheck == null) {
             custdao.insertCustomer(cust);
@@ -124,12 +128,25 @@ public class checkOutController extends HttpServlet {
                     Cad.addCustomerAndAccount(lastCustId, a.getAid());
                 }
 
+                Order order = new Order();
+                OrderDAO oda = new OrderDAO();
+                order.setCustid(lastCustId);
+                order.setAccountorderid(a.getAid());
+                order.setOrderDate(today);
+                oda.insertOrder(order);
             }//if user not login
             else {
-
+                int accountid = 0;
+                int lastCustId = custdao.getLastIdOfCustomer();
+                Order order = new Order();
+                OrderDAO oda = new OrderDAO();
+                order.setCustid(lastCustId);
+                order.setAccountorderid(accountid);
+                order.setOrderDate(today);
+                oda.insertOrder(order);
             }
-
-        } else {
+        } //if customer has been exist in database
+        else {
             //if user login
             if (session.getAttribute("acc") != null) {
                 CustomerAccountDAO Cad = new CustomerAccountDAO();
@@ -139,10 +156,21 @@ public class checkOutController extends HttpServlet {
                 if (ca == null) {
                     Cad.addCustomerAndAccount(custcheck.getCustid(), a.getAid());
                 }
-
+                Order order = new Order();
+                OrderDAO oda = new OrderDAO();
+                order.setCustid(custcheck.getCustid());
+                order.setAccountorderid(a.getAid());
+                order.setOrderDate(today);
+                oda.insertOrder(order);
             }//if user not login
             else {
-
+                int accountid = 0;
+                Order order = new Order();
+                OrderDAO oda = new OrderDAO();
+                order.setCustid(custcheck.getCustid());
+                order.setAccountorderid(accountid);
+                order.setOrderDate(today);
+                oda.insertOrder(order);
             }
         }
 

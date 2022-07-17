@@ -88,9 +88,5 @@ public class CustomerDAO extends BaseDAO<Object>{
         return lastCustId;
     }
 
-     public static void main(String[] args) {
-        CustomerDAO cd = new CustomerDAO();
-        int lid= cd.getLastIdOfCustomer();
-         System.out.println("Last "+lid);
-    }
+
 }
