@@ -411,6 +411,10 @@
 
                         <li class="lastItem"><a title="" href="showCartController">My cart</a></li>
 
+                        <c:if test="${sessionScope.acc!=null}">
+                            <li class=""><a title="" href="changePassword">Change Password</a></li>
+                            </c:if>
+
                     </ul>
                 </div>
 

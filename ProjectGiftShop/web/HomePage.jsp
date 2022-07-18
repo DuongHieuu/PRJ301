@@ -263,13 +263,17 @@
                     <ul class="list">
                         <c:forEach items="${listC}" var="c" >
                             <li> <a title="" href="categoryController?cid=${c.cid}">${c.categoryName}</a></li>
-                        </c:forEach>
+                            </c:forEach>
                     </ul>
                 </div>
                 <div class="col-md-3  custom_footer custom_footer3">
                     <h3>Information</h3>
                     <ul class="list">                       
                         <li class="lastItem"><a title="" href="showCartController">My cart</a></li>
+
+                        <c:if test="${sessionScope.acc!=null}">
+                            <li class=""><a title="" href="changePassword">Change Password</a></li>
+                            </c:if>
                     </ul>
                 </div>
                 <div class="col-md-3  custom_footer custom_footer4">

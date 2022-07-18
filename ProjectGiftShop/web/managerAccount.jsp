@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-lg-3 logo_wrap">
-                    <a id="logo" href="home.jsp">
+                    <a id="logo" href="homePageController">
 
                         <b>GiftShop</b>
 
@@ -106,10 +106,10 @@
 
 
                             <ul class="sub-menu" style="width: 235px; ">
-                                <li style="width: 100%; float: none; "><a class="${listP!=null?"active":""}"
+                                <li style="width: 100%; float: none; "><a class="${listP!=null||product!=null?"active":""}"
                                                                           style="width: auto; float: none;" href="managerController">Manager Product</a>
                                 </li>
-                                <li style="width: 100%; float: none; "><a class="${listA!=null?"active":""}"
+                                <li style="width: 100%; float: none; "><a class="${listA!=null||account!=null?"active":""}"
                                                                           style="width: auto; float: none;" href="managerAccount">Manager Account</a>
                                 </li>
 
@@ -182,7 +182,7 @@
                                                                           src="images/editIcon.png"/>
                                 </a>
                                 <a href="#" onclick="confirmDelete(${a.aid})"><img style="width:30px;"
-                                                             src="images/deleteIcon.png" />
+                                                                                   src="images/deleteIcon.png" />
                                 </a>
                             </td>
 
@@ -260,6 +260,10 @@
 
 
                         <li class="lastItem"><a title="" href="showCartController">My cart</a></li>
+
+                        <c:if test="${sessionScope.acc!=null}">
+                            <li class=""><a title="" href="changePassword">Change Password</a></li>
+                            </c:if>
 
                     </ul>
                 </div>

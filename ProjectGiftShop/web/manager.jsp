@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-lg-3 logo_wrap">
-                    <a id="logo" href="home.jsp">
+                    <a id="logo" href="homePageController">
                         <b>GiftShop</b>
                         <span>Gift & Accessories</span>
                     </a>
@@ -197,9 +197,12 @@
                 <div class="col-md-3  custom_footer custom_footer3">
                     <h3>Information</h3>
                     <ul class="list">
-                        <li class="firstItem"><a title="" href="/account">My account</a></li>
-                        <li><a title="" href="/account/addresses">My addresses</a></li>
+                        
                         <li class="lastItem"><a title="" href="/cart">My cart</a></li>
+                        
+                        <c:if test="${sessionScope.acc!=null}">
+                            <li class=""><a title="" href="changePassword">Change Password</a></li>
+                            </c:if>
                     </ul>
                 </div>
                 <div class="col-md-3  custom_footer custom_footer4">
