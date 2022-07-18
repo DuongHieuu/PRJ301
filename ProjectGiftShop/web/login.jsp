@@ -16,8 +16,8 @@
         <div class="login_signup">
             <div class="form">
                 <form class="login-form" action="login" method="post">
-                    <input type="text" placeholder="username" name="username"/>
-                    <br><input type="text" placeholder="password" name="password"/>
+                    <input type="text" placeholder="Username" name="username" required/>
+                    <br><input type="text" placeholder="Password" name="password" required/>
                     <br><button>login</button>
                     <p class="message">If you want registered, please click: <a href="signup.jsp">Create an account</a></p>
                 </form>

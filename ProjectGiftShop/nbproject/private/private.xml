@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/homePage.jsp</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/shop.jsp</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/DAL/ProductDAO.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/src/java/Controller/searchProductController.java</file>
-            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/manager.jsp</file>
+            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/checkout.jsp</file>
+            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/addProduct.jsp</file>
+            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/updateProduct.jsp</file>
+            <file>file:/C:/Users/dthie/OneDrive/Desktop/New%20folder/PRJ301/ProjectGiftShop/web/product.jsp</file>
         </group>
     </open-files>
 </project-private>
