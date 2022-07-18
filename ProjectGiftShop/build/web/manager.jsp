@@ -24,7 +24,7 @@
                     <div class="header_row-2-search">
                         <!-- HEADER SEARCH -->
                         <div class="header_search">
-                           <form action="searchProductController" method="post"  >
+                            <form action="searchProductController" method="post"  >
                                 <div class="col-xs-9  col-lg-8 ">
                                     <input id="search-field" name="q" type="search" placeholder="Search store..."
                                            />
@@ -88,6 +88,21 @@
             <div class="manager_bannerSet">
                 <div class="manager_left">
                     <b>Manager System</b> 
+                    <div class="manager_search">
+
+                        <form action="managerController" method="post">
+                            <div class="">
+
+                                <input id="search-byid" name="pid" type="search" placeholder="Search product by id..." value="${searchMessage}" pattern="[0-9]{1,}" title="Please input number only."required/>
+
+                                <button type="submit" class="button_searchbyid">
+
+                                    Search
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
                     <a href="addProductController">AddProduct</a>
                 </div>
             </div>
@@ -118,28 +133,29 @@
                                 <a href="#" id="bt_delete" onclick="confirmDelete(${p.pid})">
                                     <img style="width:30px;"
                                          src="images/deleteIcon.png" /></a>
-                                
+
                             </td>
                         </tr>
                     </c:forEach>
 
                 </table>
             </div>
-            <div class="row">
+            <c:if test="${totalpage!=null}">  
+                <div class="row">
 
 
-                <div id="pagination">
+                    <div id="pagination">
 
-                    <span class="prev"><a title="" href="managerController?page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
-                            Previous</a></span>
-                            <c:forEach begin="1" end="${totalpage}" var="pg">
-                        <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="managerController?page=${pg}">${pg}</a></span>
-                        </c:forEach>
+                        <span class="prev"><a title="" href="managerController?page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
+                                Previous</a></span>
+                                <c:forEach begin="1" end="${totalpage}" var="pg">
+                            <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="managerController?page=${pg}">${pg}</a></span>
+                            </c:forEach>
 
-                    <span class="next"><a title="" href="managerController?page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
-                            »</a></span>
-                </div>
-
+                        <span class="next"><a title="" href="managerController?page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
+                                »</a></span>
+                    </div>
+                </c:if> 
             </div>
         </div>
         <div class="container-fluid ">
@@ -160,7 +176,7 @@
                     <ul class="list">
                         <c:forEach items="${listC}" var="c" >
                             <li> <a title="" href="categoryController?cid=${c.cid}">${c.categoryName}</a></li>
-                        </c:forEach>
+                            </c:forEach>
                     </ul>
                 </div>
                 <div class="col-md-3  custom_footer custom_footer3">

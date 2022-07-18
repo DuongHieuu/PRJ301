@@ -38,12 +38,13 @@ thead td{
     float: right;
 
     background-color: #0c0c0b;
-   color: antiquewhite;
-   padding: 5px;
-   border: 2px solid black;
-   border-radius: 25px;
-   margin-bottom: 20px;
+    color: antiquewhite;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-bottom: 20px;
     text-decoration: none;
+    margin-top: -20px;
 }
 
 .manager_bannerSet .manager_left b{
@@ -55,14 +56,11 @@ thead td{
     width: 100%;
 }
 #bt_delete img{
-
-
     margin-top: 50px;
-
 }
 #bt_update img{
-
-
     margin-top: 0px;
-
+}
+.button_searchbyid{
+    padding: 2px 2px 0px 2px;
 }
