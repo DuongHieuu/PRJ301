@@ -48,7 +48,7 @@ public class CartDAO extends BaseDAO<Object>{
             statement.executeUpdate();
 
         } catch (SQLException ex) {
-            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CartDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

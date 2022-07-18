@@ -109,13 +109,12 @@
                                 <li style="width: 100%; float: none; "><a class="${listP!=null||product!=null||searchMessage eq 'No products found'?"active":""}"
                                                                           style="width: auto; float: none;" href="managerController">Manager Product</a>
                                 </li>
-                                <li style="width: 100%; float: none; "><a class="${listA!=null||account!=null||searchMessage eq 'No products found'?"active":""}"
+                                <li style="width: 100%; float: none; "><a class="${listA!=null||account!=null||searchMessage eq 'No account found'?"active":""}"
                                                                           style="width: auto; float: none;" href="managerAccount">Manager Account</a>
                                 </li>
                                 <li style="width: 100%; float: none; "><a class="${listO!=null||account!=null||searchMessage eq 'No order found'?"active":""}"
                                                                           style="width: auto; float: none;" href="managerOrder">Manager Order</a>
                                 </li>
-
                             </ul>
 
                         </li>
@@ -145,10 +144,10 @@
                     <b>Manager System</b> 
                     <div class="manager_search">
 
-                        <form action="managerAccount" method="post">
+                        <form action="managerOrder" method="post">
                             <div class="">
 
-                                <input id="search-byid" name="aid" type="search" placeholder="Search account by id..." value="${searchMessage}" pattern="[0-9]{1,}" title="Please input number only."required/>
+                                <input id="search-byid" name="oid" type="search" placeholder="Search order by id..." value="${searchMessage}" pattern="[0-9]{1,}" title="Please input number only."required/>
 
                                 <button type="submit" class="button_searchbyid">
 
@@ -158,7 +157,7 @@
 
                         </form>
                     </div>
-                    <a href="addAccount">AddAccount</a>
+                    <a href="addOrder">AddOrder</a>
                 </div>
 
             </div>
@@ -166,26 +165,35 @@
                 <table class="table table table-striped  ">
                     <thead >
                         <tr>
-                            <td><b>ID</b></td>
-                            <td><b>Username</b></td>
-                            <td><b>Password</b></td>
-                            <td><b>IsAdmin</b></td>
+                            <td><b>OrderID</b></td>
+                            <td><b>CustID</b></td>
+                            <td><b>AccoutID</b></td>
+                            <td><b>OrderDate</b></td>
+                            <td><b>MoreDetails</b></td>
+                            <!--<td><b>Amount</b></td>-->
+
                             <td><b>Action</b></td>
 
                         </tr>
                     </thead>
 
-                    <c:forEach items="${listA}" var="a">
+                    <c:forEach items="${listO}" var="o">
                         <tr>
-                            <th  scope="row" style="text-align: center">${a.aid}</th>
-                            <td>${a.user}</td>
-                            <td>${a.pass}</td>
-                            <td>${a.isAdmin}</td>
-                            <td><a href="updateAccount?aid=${a.aid}"><img style="width:30px;"
-                                                                          src="images/editIcon.png"/>
+                            <th  scope="row" style="text-align: center">${o.orderid}</th>
+                            <td>${o.custid}</td>
+                            <c:if test="${o.accountorderid==0}">
+                                <td>Null</td>
+                            </c:if>
+                            <c:if test="${o.accountorderid!=0}">
+                                <td>${o.accountorderid}</td>
+                            </c:if>
+                            <td>${o.orderDate}</td>
+                            <td><a href="cartDetails?cartid=${o.orderid}">Details</a></td>
+                            <td><a href="updateOrder?oid=${o.orderid}"><img style="width:30px;"
+                                                                  src="images/editIcon.png"/>
                                 </a>
-                                <a href="#" onclick="confirmDelete(${a.aid})"><img style="width:30px;"
-                                                                                   src="images/deleteIcon.png" />
+                                <a href="#" onclick="confirmDelete(${o.orderid})"><img style="width:30px;"
+                                                                                       src="images/deleteIcon.png" />
                                 </a>
                             </td>
 
@@ -203,16 +211,16 @@
 
                     <div id="pagination">
 
-                        <span class="prev"><a title="" href="managerAccount?page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
+                        <span class="prev"><a title="" href="managerOrder?page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
                                 Previous</a></span>
                                 <c:if test="${pageCurrent-1>0}">
-                            <span class=""><a title="" href="managerAccount?page=${pageCurrent-1}">${pageCurrent-1}</a></span>
+                            <span class=""><a title="" href="managerOrder?page=${pageCurrent-1}">${pageCurrent-1}</a></span>
                             </c:if>
                             <c:forEach begin="${pageCurrent}" end="${pageCurrent+2<=totalpage?pageCurrent+2:totalpage}" var="pg">
-                            <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="managerAccount?page=${pg}">${pg}</a></span>
+                            <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="managerOrder?page=${pg}">${pg}</a></span>
                             </c:forEach>
 
-                        <span class="next"><a title="" href="managerAccount?page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
+                        <span class="next"><a title="" href="managerOrder?page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
                                 »</a></span>
                     </div>
 
@@ -263,11 +271,9 @@
 
 
                         <li class="lastItem"><a title="" href="showCartController">My cart</a></li>
-
-                        <c:if test="${sessionScope.acc!=null}">
+                            <c:if test="${sessionScope.acc!=null}">
                             <li class=""><a title="" href="changePassword">Change Password</a></li>
                             </c:if>
-
                     </ul>
                 </div>
 
@@ -288,9 +294,8 @@
     </body>
     <script>
         function confirmDelete(id) {
-            if (confirm('Are you want to delete account have Id: ' + id + '?')) {
-                window.location.href = 'deleteAccount?aid=' + id;
-                window.alert('Delete successfully!');
+            if (confirm('Do you want to delete order have id: ' + id + '?')) {
+               window.location.href = 'deleteOrder?oid=' + id;
             }
         }
     </script>
