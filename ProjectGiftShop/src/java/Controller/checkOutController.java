@@ -5,6 +5,7 @@
 package Controller;
 
 import DAL.CartDAO;
+import DAL.CategoryDAO;
 import DAL.CustomerAccountDAO;
 import DAL.CustomerDAO;
 import DAL.OrderDAO;
@@ -19,6 +20,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import model.Account;
 import model.Cart;
+import model.Category;
 import model.Customer;
 import model.CustomerAccount;
 import model.Order;
@@ -68,6 +70,10 @@ public class checkOutController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        ArrayList<Category> listCategory = new ArrayList<>();
+        CategoryDAO cd = new CategoryDAO();
+        listCategory = cd.getCategory();
+
         if (session.getAttribute("listcart") == null) {
             response.sendRedirect("showCartController");
         } else {
@@ -77,12 +83,21 @@ public class checkOutController extends HttpServlet {
             for (Cart cart : listCart) {
                 total = total + cart.getAmount() * cart.getProduct().getProductPrice();
             }
-            discount = Math.floor(total * 0.1 * 10.0) / 10.0;
-            double subtotal = total - discount;
-            request.setAttribute("discount", discount + "$");
-            request.setAttribute("subtotal", subtotal + "$");
-            request.setAttribute("listB", listCart);
-            request.getRequestDispatcher("checkout.jsp").forward(request, response);
+            //if user login
+            if (session.getAttribute("acc") != null) {
+                discount = Math.floor(total * 0.1 * 10.0) / 10.0;
+                double subtotal = total - discount;
+                request.setAttribute("discount", discount + "$");
+                request.setAttribute("subtotal", subtotal + "$");
+                request.setAttribute("listB", listCart);
+                request.setAttribute("listC", listCategory);
+                request.getRequestDispatcher("checkout.jsp").forward(request, response);
+            } else {
+                request.setAttribute("subtotal", total + "$");
+                request.setAttribute("listB", listCart);
+                request.setAttribute("listC", listCategory);
+                request.getRequestDispatcher("checkout.jsp").forward(request, response);
+            }
         }
     }
 

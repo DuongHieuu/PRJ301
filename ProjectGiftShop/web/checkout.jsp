@@ -138,7 +138,7 @@
                     <div id="main_content" class="col-sm-6">
 
                         <div class="fieldset">
-                            <form action="checkOutController1" method="post" onsubmit="checkOut()">
+                            <form action="checkOutController" method="post" onsubmit="checkOut()">
                                 <div class="field__head">
 
                                     <h1>
