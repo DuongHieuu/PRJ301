@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,8 +21,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import model.Category;
 import model.Product;
-
-
 
 /**
  *
@@ -42,7 +40,7 @@ public class searchProductController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -80,22 +78,35 @@ public class searchProductController extends HttpServlet {
             pageC = Integer.parseInt(pageCurrent);
 
         }
-        totalPage = pd.getTotalPageSreachByName(nameSearch,pagesize);
+        totalPage = pd.getTotalPageSreachByName(nameSearch, pagesize);
         ArrayList<Product> products = new ArrayList<>();
         products = pd.getProductSearchByNameWithPaging(nameSearch, pageC, pagesize);
-        boolean issearch = true;
-        ArrayList<Category> listCategory = new ArrayList<>();
-        CategoryDAO cd = new CategoryDAO();
-        listCategory = cd.getCategory();
-        request.setAttribute("listC", listCategory);
-        request.setAttribute("listP", products);
+        if (products.isEmpty() == false) {
+            boolean issearch = true;
+            ArrayList<Category> listCategory = new ArrayList<>();
+            CategoryDAO cd = new CategoryDAO();
+            listCategory = cd.getCategory();
+            request.setAttribute("listC", listCategory);
+            request.setAttribute("listP", products);
 
-        request.setAttribute("issearch", issearch);
-        request.setAttribute("textsearch", nameSearch);
-        request.setAttribute("totalpage", totalPage);
-        request.setAttribute("pageCurrent", pageC);
+            request.setAttribute("issearch", issearch);
+            request.setAttribute("textsearch", nameSearch);
+            request.setAttribute("totalpage", totalPage);
+            request.setAttribute("pageCurrent", pageC);
 
-        request.getRequestDispatcher("shop.jsp").forward(request, response);
+            request.getRequestDispatcher("shop.jsp").forward(request, response);
+        } else {
+            ArrayList<Category> listCategory = new ArrayList<>();
+            CategoryDAO cd = new CategoryDAO();
+            listCategory = cd.getCategory();
+            boolean issearch = true;
+            request.setAttribute("issearch", issearch);
+
+            request.setAttribute("listC", listCategory);
+            request.setAttribute("textsearch", "Don't find any product have name contain " + nameSearch);
+            request.getRequestDispatcher("shop.jsp").forward(request, response);
+        }
+
     }
 
     /**

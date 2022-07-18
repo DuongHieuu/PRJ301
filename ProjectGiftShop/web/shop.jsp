@@ -204,17 +204,22 @@
 
                 <c:choose>
                     <c:when test="${issearch==true}">
-                        <div id="pagination">
+                        <c:if test="${totalpage!=null}">
+                            <div id="pagination">
 
-                            <span class="prev"><a title="" href="searchProductController?q=${textsearch}&page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
-                                    Previous</a></span>
-                                    <c:forEach begin="1" end="${totalpage}" var="pg">
-                                <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="searchProductController?q=${textsearch}&page=${pg}">${pg}</a></span>
-                                </c:forEach>
+                                <span class="prev"><a title="" href="searchProductController?q=${textsearch}&page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
+                                        Previous</a></span>
+                                        <c:if test="${pageCurrent-1>0}">
+                                    <span class=""><a title="" href="searchProductController?q=${textsearch}&page=${pageCurrent-1}">${pageCurrent-1}</a></span>
+                                    </c:if>       
+                                    <c:forEach begin="${pageCurrent}" end="${pageCurrent+2<=totalpage?pageCurrent+2:totalpage}" var="pg">
+                                    <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="searchProductController?q=${textsearch}&page=${pg}">${pg}</a></span>
+                                    </c:forEach>
 
-                            <span class="next"><a title="" href="searchProductController?q=${textsearch}&page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
-                                    »</a></span>
-                        </div>
+                                <span class="next"><a title="" href="searchProductController?q=${textsearch}&page=${pageCurrent+1>totalpage?totalpage:pageCurrent+1}">Next
+                                        »</a></span>
+                            </div>
+                        </c:if>
                     </c:when>
 
                     <c:when test="${iscategory==true }">
@@ -222,7 +227,10 @@
 
                             <span class="prev"><a title="" href="categoryController?cid=${cid}&page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
                                     Previous</a></span>
-                                    <c:forEach begin="1" end="${totalpage}" var="pg">
+                                    <c:if test="${pageCurrent-1>0}">
+                                <span class=""><a title="" href="categoryController?cid=${cid}&page=${pageCurrent-1}">${pageCurrent-1}</a></span>
+                                </c:if>        
+                                <c:forEach begin="${pageCurrent}" end="${pageCurrent+2<=totalpage?pageCurrent+2:totalpage}" var="pg">
                                 <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="categoryController?cid=${cid}&page=${pg}">${pg}</a></span>
                                 </c:forEach>
 
@@ -234,8 +242,12 @@
                         <div id="pagination">
 
                             <span class="prev"><a title="" href="shopController?page=${pageCurrent-1>0?pageCurrent-1:"1"}">«
-                                    Previous</a></span>
-                                    <c:forEach begin="1" end="${totalpage}" var="pg">
+                                    Previous</a>
+                            </span>
+                            <c:if test="${pageCurrent-1>0}">
+                                <span class=""><a title="" href="shopController?page=${pageCurrent-1}">${pageCurrent-1}</a></span>
+                                </c:if>
+                                <c:forEach begin="${pageCurrent}" end="${pageCurrent+2<=totalpage?pageCurrent+2:totalpage}" var="pg">
                                 <span class=" ${pg==pageCurrent?"current":""}"><a title="" href="shopController?page=${pg}">${pg}</a></span>
                                 </c:forEach>
 
