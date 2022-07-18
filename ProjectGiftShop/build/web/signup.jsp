@@ -17,7 +17,7 @@
     <body>
         <div class="login_signup">
             <div class="form">
-                <form class="signup_form" action="signup1" method="post">
+                <form class="signup_form" action="signup" method="post">
                     <div class="alert_danger" role="alert">
                         ${alertMess}
                     </div>

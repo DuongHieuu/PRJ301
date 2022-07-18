@@ -71,8 +71,20 @@
                         <li class="firstItem">
                             <a  href="homePageController">Home</a>
                         </li>
-                        <li class="">
-                            <a  href="shopController">Shop</a>
+                        <li class="has-dropdown">
+                            <a title="" class="active" >Manager</a>
+
+
+                            <ul class="sub-menu" style="width: 235px; ">
+                                <li style="width: 100%; float: none; "><a class="${listP!=null?"active":""}"
+                                                                          style="width: auto; float: none;" href="managerController">Manager Product</a>
+                                </li>
+                                <li style="width: 100%; float: none; "><a class="${listA!=null?"active":""}"
+                                                                          style="width: auto; float: none;" href="managerAccount">Manager Account</a>
+                                </li>
+
+                            </ul>
+
                         </li>
                         <li>
                             <a  href="aboutusController">About Us</a>
@@ -119,7 +131,7 @@
                     </thead>
                     <c:forEach items="${listP}" var="p">
                         <tr>
-                            <td>${p.pid}</td>
+                            <th  scope="row" style="text-align: center">${p.pid}</th>
                             <td>${p.productName}</td>
                             <td> <img style="width:180px;"
                                       src="${p.productImg}"
